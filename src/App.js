@@ -1,58 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import uuidv4 from 'uuid/dist/v4';
 
-function App() {
+import TodoList from './components/TodoList';
+
+import { updateTodos } from './features/todoSlice';
+import { ReactComponent as addIcon } from './plus.svg';
+
+import './App.css';
+import { ReactComponent as imgIcon } from './plus.svg';
+
+const App = () => {
+  const inputRef = useRef();
+  const dispatch = useDispatch();
+
+  const addTodo = () => {
+    const inputText = inputRef.current.value.toString();
+    dispatch(
+      updateTodos({
+        id: uuidv4(),
+        text: inputText,
+        status: false,
+        editStatus: false,
+      })
+    );
+
+    inputRef.current.value = '';
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <div className="todo-primary-input">
+        <input ref={inputRef} type="text" />
+
+        <button onClick={addTodo}>Add</button>
+      </div>
+      <TodoList />
     </div>
   );
-}
+};
 
 export default App;

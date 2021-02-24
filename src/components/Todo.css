@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.list-item-container {
+  display: flex;
+  flex: space;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 20%;
+  padding: 10px;
+  background-color: ;
+}
+
+.todo-item-input {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.btn {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  width: 35px;
+}
+.edit-input {
+  background-color: springgreen;
+}
+.edit-button {
+  background-color: springgreen;
+}
+.delete-button {
+  background-color: indianred;
+}
+.true {
+  text-decoration: line-through;
+}
