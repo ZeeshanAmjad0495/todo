@@ -1,14 +1,13 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import uuidv4 from 'uuid/dist/v4';
+import { PlusOutlined } from '@ant-design/icons';
 
 import TodoList from './components/TodoList';
 
 import { updateTodos } from './features/todoSlice';
-import { ReactComponent as addIcon } from './plus.svg';
 
 import './App.css';
-import { ReactComponent as imgIcon } from './plus.svg';
 
 const App = () => {
   const inputRef = useRef();
@@ -33,7 +32,9 @@ const App = () => {
       <div className="todo-primary-input">
         <input ref={inputRef} type="text" />
 
-        <button onClick={addTodo}>Add</button>
+        <button onClick={addTodo}>
+          <PlusOutlined />
+        </button>
       </div>
       <TodoList />
     </div>

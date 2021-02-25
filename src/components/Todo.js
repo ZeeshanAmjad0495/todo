@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Button } from 'antd';
+import { DeleteFilled, EditFilled } from '@ant-design/icons';
 
 import {
   setChecked,
@@ -38,14 +40,20 @@ const Todo = props => {
           {editStatus ? null : text}
         </label>
       )}
-      <button
+      <Button
+        type="primary"
         className="edit-button btn"
         onClick={() => dispatch(editTodo(id))}
-      ></button>
-      <button
+      >
+        <EditFilled />
+      </Button>
+      <Button
+        danger
         className="delete-button btn"
         onClick={() => dispatch(removeTodos(id))}
-      ></button>
+      >
+        <DeleteFilled />
+      </Button>
     </div>
   );
 };

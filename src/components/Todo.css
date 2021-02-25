@@ -3,19 +3,25 @@
   padding: 0;
   box-sizing: border-box;
 }
-.list-item-container {
+.false {
   display: flex;
-  flex: space;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  max-width: 20%;
+  justify-content: space-evenly;
+  background-color: red;
+  width: 50%;
+  max-width: 50%;
+}
+
+.list-item-container {
+  min-width: 50%;
   padding: 10px;
-  background-color: ;
 }
 
 .todo-item-input {
   margin-left: 20px;
   margin-top: 20px;
+  cursor: pointer;
 }
 .btn {
   display: flex;
@@ -25,16 +31,28 @@
   border: none;
   border-radius: 10px;
   width: 35px;
+  cursor: pointer;
+  opacity: 0.7;
 }
 .edit-input {
   background-color: springgreen;
 }
 .edit-button {
+  opacity: 0.7;
+  background-color: springgreen;
+}
+.edit-button:hover {
+  opacity: 1;
   background-color: springgreen;
 }
 .delete-button {
+  opacity: 0.7;
   background-color: indianred;
 }
+.delete-button:hover {
+  opacity: 1;
+}
+
 .true {
   text-decoration: line-through;
 }

@@ -40,15 +40,18 @@
   font-size: 20px;
   font-weight: lighter;
   color: orangered;
+  opacity: 0.7;
 }
 .todo-primary-input input:hover {
   outline: orangered;
   box-shadow: 4px 4px 5px 2px orangered;
+  opacity: 1;
 }
 
 .todo-primary-input input:active {
   outline: orangered;
   box-shadow: 4px 4px 5px 2px orangered;
+  opacity: 1;
 }
 
 .todo-primary-input button {
@@ -64,7 +67,9 @@
   background-color: greenyellow;
   position: relative;
   cursor: pointer;
+  opacity: 0.7;
 }
 .todo-primary-input button:hover {
   box-shadow: 4px 4px 5px 2px olivedrab;
+  opacity: 1;
 }
